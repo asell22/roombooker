@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PseudoRoomzilla</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.com/libraries/semantic-ui"> -->
+  </head>
+  <body>
+    <!-- <% if @reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% @reservation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %> -->
+
+    <div class = container>
+      <div class = "ui grid">
+        <div class="four wide column"></div>
+
+        <div class = "four wide column"><h1>Rooms available</h1></div>
+
+          <div class="eight wide column field">
+            <label>Date</label>
+            <input id = "date"type="text" placeholder="Pick A Date" value = "2/3/15" >
+            <div class="ui yellow button">Make a Reservation</div>
+            <div id = "form" style="display:none;">
+              <%=  render 'form'%>
+            </div>
+          </div>
+
+
+
+      </div>
+
+
+        <div class="ui grid">
+          <div class="two wide column"><h3>Room</h3></div>
+          <div class="two wide column">  <h3>Size</h3> </div>
+          <div class="four wide column"> <h3>Time Slots</h3></div>
+        </div>
+        <hr>
+        <div class="ui grid">
+          <div class="two wide column"></div>
+          <div class="two wide column"></div>
+          <div id ="7"class="one wide column time-div"><h5>7am</h5></div>
+          <div id ="8"class="one wide column time-div"><h5>8am</h5></div>
+          <div id ="9"class="one wide column time-div"><h5>9am</h5></div>
+          <div id ="10"class="one wide column time-div"><h5>10am</h5></div>
+          <div id="11"class="one wide column time-div"><h5>11am</h5></div>
+          <div id="12"class="one wide column time-div"><h5>12pm</h5></div>
+          <div id="13"class="one wide column time-div"><h5>1pm</h5></div>
+          <div id="14"class="one wide column time-div"><h5>2pm</h5></div>
+          <div id="15"class="one wide column time-div"><h5>3pm</h5></div>
+          <div id="16"class="one wide column time-div"><h5>4pm</h5></div>
+          <div id="17"class="one wide column time-div"><h5>5pm</h5></div>
+          <div id="18"class="one wide column time-div"><h5>6pm</h5></div>
+        </div>
+        <hr>
+        <% @rooms.each do |room| %>
+          <div class="ui grid" data-roomid="<%= room.id %>" >
+            <div class="two wide column"><%= room.name %></div>
+            <div class="two wide column"><%= room.size %></div>
+            <div class="7 one wide column"></div>
+            <div class="8 one wide column"></div>
+            <div class="9 one wide column"></div>
+            <div class="10 one wide column"></div>
+            <div class="11 one wide column"></div>
+            <div class="12 one wide column"></div>
+            <div class="13 one wide column"></div>
+            <div class="14 one wide column"></div>
+            <div class="15 one wide column"></div>
+            <div class="16 one wide column"></div>
+            <div class="17 one wide column"></div>
+            <div class="18 one wide column"></div>
+          </div>
+          <hr>
+        <% end %>
+    </div>
+  </body>
+</html>

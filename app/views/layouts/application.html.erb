@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RoomzillaApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="/semantic_ui/dist/semantic.css" media="screen" title="no title" charset="utf-8">
+  <script src = "/semantic_ui/dist/semantic.js"> </script>
+</head>
+<body>
+
+
+  <div class="ui large breadcrumb">
+    <% if current_user %>
+    <%= link_to "Sign Out", signout_path %>
+    <% else %>
+    <%= link_to "Sign Up", signup_path %>
+    <div class="divider"> / </div>
+    <%= link_to "Sign In", signin_path %>
+    <% end %>
+  </div>
+<%= yield %>
+
+</body>
+</html>
